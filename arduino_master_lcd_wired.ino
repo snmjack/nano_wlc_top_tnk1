@@ -33,7 +33,7 @@ int distance;
 int tankEmpty = 90;
 bool relay_status = false;
 int relay_state = HIGH;
-String motor_status = "";
+char* motor_status = "";
 int button_reading;           // the current reading from the input pin
 int previous = HIGH;    // the previous reading from the input pin
 long timeButton = 0;         // the last time the output pin was toggled
@@ -230,10 +230,10 @@ void motorDisplayFunction() {
   display.setCursor(0,34);
   display.print("T");
   display.setCursor(16,34);
-  display.print(topsensor_status);
+  display.print(digitalRead(TopSensor));
   display.setCursor(0,50);
   display.print("B");
   display.setCursor(16,50);
-  display.print(bottomsensor_status);
+  display.print(digitalRead(BottomSensor));
   display.setCursor(34,34);
 }
